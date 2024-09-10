@@ -1,9 +1,11 @@
-def mininum_wait_time(a,b,c):
+def min_wait_time(a, b, c):
     t = 0
-    while (a - b) * (c + t) > b * t:
+    while True:
+        
+        if b * (t + c) >= a * c:
+            return t
         t += 1
-    return t 
 
 a, b, c = map(int, input().split())
 
-print(mininum_wait_time(a,b,c))
+print(min_wait_time(a, b, c))
